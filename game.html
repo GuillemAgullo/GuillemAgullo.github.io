@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>Guillem Agulló's Projects</title>
+	<link rel="stylesheet" href="style.css"/>
+	<link rel="icon" type="image/x-icon" href="favicon.png"/>
+	<script>
+let numero = Math.floor(Math.random()*100+1);
+
+function check_number (){
+
+	console.log(numero);
+	let jugador = document.getElementById("numero_jugador").value;
+	console.log(jugador);
+	
+	let valor = parseInt(jugador);
+
+	if (isNaN(valor)){
+	document.getElementById("resultado").innerHTML = "<strong class=\"error\">ERROR</strong>";
+
+	return;
+	}
+
+	if (valor < numero){
+		document.getElementById("resultado").innerHTML = "<em>El número ocult és major</em>";
+	}
+	else if (valor > numero){
+		document.getElementById("resultado").innerHTML = "<em>El número ocult és menor</em>";
+	}
+	else{
+		document.getElementById("resultado").innerHTML = "<storng>asertaste bendito!!!</strong>";	
+	}
+}
+fetch ("enbuscapaco.json").then(function(response){
+	return response.json();
+	}).then( function(data){
+	console.log(data.name);
+});
+function carga_datos (id_character) {
+	fetch("character"+id_character+".json").then(function(response){
+		return response.json();
+	}).then(function(data){
+		let lista = "<ul>";
+		lista += "<li>Nombre: "+data.name+"</li>";
+		lista += "<li>Class: "+data.class+"</li>";
+		lista += "<li>Age: "+data.age+"</li>";
+		lista += "<li>Race: "+data.race+"</li>";
+		lista += "</ul>";
+		console.log(data);
+		
+		document.getElementById("character_data").innerHTML = lista ;
+	});
+}
+
+
+carga_datos(1);
+
+	</script>
+</head>
+<body>
+	<header>
+		<h1>Pàgina web d'exemple per a <abbr title="Escola de Noves Tecnologíes Interactives">ENTI</abbr></h1>
+		<p> Assignatura de llenguatges de marques</p>
+	</header>
+
+	<nav>
+		<ul>
+			<li><a href="index.html">Portada</a></li>
+			<li><a href="cv.html">CV</a></li>
+			<li><a href="game.html">Jocs</a></li>
+			<li><a href="projects.html">Projectes</a></li>
+			<li><a href="contact.html">Contacte</a></li>
+		</ul>
+	</nav>
+
+	<main>
+		<h2>Endevina el número entre 1 i el 100</h2>
+		<form>
+			<p id="resultado">Introdueix se número:</p>
+			<p><input type="text" id="numero_jugador" /></p>
+			<p><input type="button" value="Endevina Collons!" onClick="check_number();" id="button"/></p>
+		</form>
+		<form id="characters">
+		<ul id="character_list">
+			<li><button type="button" id="character1" onClick="carga_datos(1);">Eustaquio</button></li>
+			<li><button type="button" id="character2" onClick="carga_datos(2);">Mariana</button></li>
+			<li><button type="button" id="character3" onClick="carga_datos(3);">Mortadelo</button></li>
+			<li><button type="button" id="character4" onClick="carga_datos(4);">Messi</button></li>
+		</ul>
+		<section id="character_data"></section>
+		</form>
+	</main>
+
+	<footer>
+		Guillem Agulló (c) All rights reserved
+	</footer>
+</body>

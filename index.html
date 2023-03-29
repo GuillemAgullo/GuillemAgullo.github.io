@@ -1,8 +1,31 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+	
+	<meta charset="UTF-8" />
 	<title>Guillem Agulló's Projects</title>
 	<link rel="stylesheet" href="style.css" />
+	<link rel="icon" type="image/x-icon" href="favicon.png"/>
+	<script>
+function funbut(){
+
+	document.getElementById("colorbut").style.backgroundColor = "red";
+}
+let contador = 0;
+
+function cuenta(){
+	contador++;
+	document.getElementById("contador").innerHTML = contador;
+}
+
+let contador_interval;
+
+function inicia_contador (){
+	let contador_interval = setInterval(cuenta, 1000);
+}
+	</script>
+
 </head>
 <body>
 	<header>
@@ -23,7 +46,9 @@
 	<main>
 		<h2>Qui soc?</h2>
 		<p>No ho sé ni jo</p>
-		
+		<p><input type="button" onClick="funbut();" value="Move!" id="colorbut"></input> </p>		
+		<p id="contador">0</p>
+		<p><input type="button" id="initcontador" onClick="inicia_contador" value="in a silent way"></input></p>
 	</main>
 
 	<footer>
