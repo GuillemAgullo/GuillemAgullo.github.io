@@ -4,7 +4,7 @@
 	<meta charset="UTF-8"/>
 	<title>Guillem Agulló's Projects</title>
 	<link rel="stylesheet" href="style.css"/>
-	<link rel="icon" type="image/x-icon" href="favicon.png"/>
+	<link rel="icon" type="image/x-icon" href="favicon.ico"/>
 	<script>
 let numero = Math.floor(Math.random()*100+1);
 
@@ -32,6 +32,12 @@ function check_number (){
 		document.getElementById("resultado").innerHTML = "<storng>asertaste bendito!!!</strong>";	
 	}
 }
+fetch ("endevinalles.json").then(function(response){
+	return response.json();
+	}).then( function(data){
+	console.log(data.endevinalla3);
+});
+
 /*
 fetch ("enbuscapaco.json").then(function(response){
 	return response.json();
@@ -84,6 +90,10 @@ carga_datos(1);*/
 				<span> Endevina!</span>
 			</button>
 		</form>
+		<h2>Joc de les endevinalles!!!</h2>
+		<p>Personalment sóc un apassionat de les endevinalles. A vejam si podeu endevinar-ne alguna!</p>
+		<p id="displayendevinalla"></p>
+		<button type="button"><span>check!</span></button>
 		
 	</main>
 
