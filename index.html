@@ -6,52 +6,34 @@
 	<meta charset="UTF-8" />
 	<title>Guillem Agulló's Projects</title>
 	<link rel="stylesheet" href="style.css" />
-	<link rel="icon" type="image/x-icon" href="favicon.png"/>
-	<script>
-function funbut(){
-
-	document.getElementById("colorbut").style.backgroundColor = "red";
-}
-let contador = 0;
-
-function cuenta(){
-	contador++;
-	document.getElementById("contador").innerHTML = contador;
-}
-
-let contador_interval;
-
-function inicia_contador (){
-	let contador_interval = setInterval(cuenta, 1000);
-}
-	</script>
-
+	<link rel="icon" type="image/x-icon" href="favicon.ico"/>
 </head>
 <body>
 	<header>
-		<h1>Pàgina web d'exemple per a <abbr title="Escola de Noves Tecnologíes Interactives">ENTI</abbr></h1>
-		<p> Assignatura de llenguatges de marques</p>
+		<h1>Guillem Agulló</h1>
+		<p>Músic i Estudiant de Ciberseguretat</p>
 	</header>
 
 	<nav>
 		<ul>
 			<li><a href="index.html">Portada</a></li>
 			<li><a href="cv.html">CV</a></li>
-			<li><a href="game.html">Jocs</a></li>
-			<li><a href="projects.html">Projectes</a></li>
+			<li><a href="games.html">Jocs</a></li>
+			<li><a href="hobbies.html">Hobbies</a></li>
 			<li><a href="contact.html">Contacte</a></li>
 		</ul>
 	</nav>
 
 	<main>
 		<h2>Qui soc?</h2>
-		<p>No ho sé ni jo</p>
-		<p><input type="button" onClick="funbut();" value="Move!" id="colorbut"></input> </p>		
-		<p id="contador">0</p>
-		<p><input type="button" id="initcontador" onClick="inicia_contador" value="in a silent way"></input></p>
+		<p>Hola! Soc en Guillem, un noi de 18 anys que està cursant el cicle de ciberseguretat de ENTI i per això estic creant aquesta pàgina web.</p>
+		<p>En aquesta pàgina web podreu explorar qui sóc jo com a persona i quins són els meus objectius i preocupacions.
+		Espero que aquesta pàgina web sigui del vostre agrat.</p>
+		<p><img src="Captura de pantalla 2023-03-05 113203.png" title="Jo" width="300" height="450"></img></p>
 	</main>
 
 	<footer>
-		Guillem Agulló (c) All rights reserved
+		<h2>Pàgina web oficial de Guillem Agulló</h2>		
+		<p>All rights reserved by Guillem Agulló (c)</p>
 	</footer>
 </body>
