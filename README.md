@@ -11,6 +11,15 @@ XML (Extended Markup Language) és el llenguatge base dels llenguatges de marque
 ### Per a què serveix?
 Com he esmentat anteriorment aquest llenguatge s'empra per a transportar, emmagatzemar i processar dades i és una forma de tenir-les accessible i còmode. També s'usa per a programes de desenvolupament de entorns interactius com android studio, que l'utilitza per a transportar les dades i donar format als diferents arxius que s'han de carregar en pantalla.
 
+Hi han diferents tipus de formats:
+* Text pla → fitxer que conté text sense format o estructura, és a dir, simplement una seqüència de caràcters. El text pla és llegible per als humans i es pot obrir i editar amb un editor de text simple.
+
+* Text enriquit → És un text pla amb info extra. Es refereix a un fitxer que conté text amb formats addicionals com negretes, cursives, subratllats, mides de font, colors, etc. Per exemple, els meus apunts de Google Docs són text enriquit.
+
+* Binari → Contenen dades en un format que no és llegible directament pels humans, sinó que està dissenyat per ser processat per ordinadors.
+
+XML utilitza el text enriquit per a processar el seu codi.
+
 ### Casos d'ús
 Per exemple, en un banc, tindràn la seva base de dades, però normalment de la base de dades al lliurament d'aquestes dades hi ha un xml puix que en la base de dades la informació està molt optimitzada.
 
