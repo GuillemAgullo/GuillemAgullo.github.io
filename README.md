@@ -5,6 +5,9 @@
 XML en anglès són les sigles de eXtensible Markup Language, el qual vol dir que és un llenguatge de marques amb el qual pots definir tu mateix les funcions i les marques. Està disenyat per a transportar i emmagatzemar dades entre aplicacions i desenvolupat de manera que sigui autodescriptiu.
 El format en que s'emmagatzemen les dades està disenyat perquè es pugui llegir fàcilment i perquè la màquina ho pugui també desxifrar amb facilitat.
 SMGL és la mare de XML i HTML i és d'on sorgeix aquest llenguatge de programació.
+
+XML (Extended Markup Language) és el llenguatge base dels llenguatges de marques que tenim avui dia. XML no ve del no-res. Als anys 70 era SGML, s'utilitzava per marcar en documents el que era una negreta, una cursiva, ratllat etc. Ja que en aquella època no hi havia interfície gràfica. El driver de la impressora interpreta això, és a dir, el parsejava i posava les negretes, cursives… quan tocava. Arriben els 90, a banda d'inventar-se Linux, s'inventa Internet.
+
 ### Per a què serveix?
 Com he esmentat anteriorment aquest llenguatge s'empra per a transportar, emmagatzemar i processar dades i és una forma de tenir-les accessible i còmode. També s'usa per a programes de desenvolupament de entorns interactius com android studio, que l'utilitza per a transportar les dades i donar format als diferents arxius que s'han de carregar en pantalla.
 
@@ -61,3 +64,11 @@ La capçelera del document és la mateixa que a XML i el que haurem de fer és p
 <!ATTLIST age value #REQUIRED>
 ```
 D'auesta manera, on diu element son les variables i on diu attlist són els atributs de les variables, com en el cas de age: "value"
+
+Les diferents etiquetes són:
+
+#REQUIRED: Aquesta etiqueta s'utilitza per especificar que un atribut és obligatori per a un element determinat. Si un atribut amb aquesta etiqueta no s'especifica al document XML, es produeix un error de validació.
+
+#PCDATA: Aquesta etiqueta s'utilitza per especificar que un element només pot contenir dades de text pla (text sense format), sense etiquetes XML ni caràcters especials. És a dir, l'element no pot contenir subelements, només text.
+
+#EMPTY: Aquesta etiqueta es fa servir per especificar que un element no pot contenir contingut. És a dir, un element amb aquesta etiqueta no pot tenir text o subelements. S'utilitza per a elements que actuen com a contenidors buits, com ara les etiquetes de salt de línia, les etiquetes de tancament, etc.
