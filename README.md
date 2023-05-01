@@ -55,7 +55,7 @@ En canvi, si sabem sempre que la variable serà un tipus concret de dada es pode
 ```XML
 <nom_de_la_variable value="valor"/>
 ```
-Això és un exemple de variable **inparella**
+Això és un exemple de variable **imparella**
 
 Un exemle de codi utilitzant el que acabo de mencionar podría ser aquest:
 ```XML
