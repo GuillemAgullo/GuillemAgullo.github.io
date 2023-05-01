@@ -34,6 +34,7 @@ Nosaltres podem crear les etiquetes que vulguem i perquè tot tingui sentit hem 
 
 ### Programació XML:
 
+
 Per començar a provar aquest llenguatge hem d'obrir el nostre editor de codi pereferit i començar un document XML.
 
 #### Capçalera:
@@ -49,10 +50,13 @@ Per definir una variable es fa de la següent manera:
 ```XML
 <nom de la variable> variable </nom de la variable>
 ```
+Això és un exemple de variable **parella**.
 En canvi, si sabem sempre que la variable serà un tipus concret de dada es poden escriure variables d'aquesta manera més senzilla:
 ```XML
 <nom_de_la_variable value="valor"/>
 ```
+Això és un exemple de variable **inparella**
+
 Un exemle de codi utilitzant el que acabo de mencionar podría ser aquest:
 ```XML
 <?xml version="1.0" encoding="UTF-8" ?>
