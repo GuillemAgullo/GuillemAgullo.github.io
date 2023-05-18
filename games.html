@@ -32,12 +32,46 @@ function check_number (){
 		document.getElementById("resultado").innerHTML = "<storng>asertaste bendito!!!</strong>";	
 	}
 }
-fetch ("endevinalles.json").then(function(response){
-	return response.json();
-	}).then( function(data){
-	console.log(data.endevinalla3);
-});
 
+let adivinanzas = [];
+let adivinanzaActual;
+
+fetch('endevinalles.json')
+	.then(response => response.json())
+	.then(data => {
+	  	adivinanzas = data;
+		mostrarAdivinanza();
+	});
+
+function mostrarAdivinanza() {
+adivinanzaActual = adivinanzas[Math.floor(Math.random() * adivinanzas.length)];
+document.getElementById('adivinanza').innerText = adivinanzaActual.adivinanza;
+}
+
+function esRespuestaCorrecta(respuestaUsuario, respuestaCorrecta) {
+	if (respuestaUsuario === respuestaCorrecta) {
+		return true;
+	}	
+		return false;	
+}
+
+document.getElementById('enviarRespuesta').addEventListener('click', () => {
+	const respuestaUsuario = document.getElementById('respuestaUsuario').value.trim().toLowerCase();
+	const respuestaCorrecta = adivinanzaActual.respuesta.trim().toLowerCase();
+
+	if (esRespuestaCorrecta(respuestaUsuario, respuestaCorrecta)) {
+		document.getElementById('resultado').innerText = '¡Respuesta correcta!';
+	} else {
+		document.getElementById('resultado').innerText = 'Respuesta incorrecta, inténtalo de nuevo.';
+	}
+});
+	  
+
+document.getElementById('cambiarAdivinanza').addEventListener('click', () => {
+    mostrarAdivinanza();
+    document.getElementById('resultado').innerText = '';
+    document.getElementById('respuestaUsuario').value = '';
+});
 /*
 fetch ("enbuscapaco.json").then(function(response){
 	return response.json();
@@ -92,9 +126,11 @@ carga_datos(1);*/
 		</form>
 		<h2>Joc de les endevinalles!!!</h2>
 		<p>Personalment sóc un apassionat de les endevinalles. A vejam si podeu endevinar-ne alguna!</p>
-		<p id="displayendevinalla"></p>
-		<button type="button"><span>check!</span></button>
-		
+		<p id="adivinanza"></p>
+		<input type="text" id="respuestaUsuario" placeholder="Escriu la teva resposta aquí petitó"></input>
+		<button type="button" id="enviarRespuesta"><span>check!</span></button>
+		<button id="cambiarAdivinanza">Canviar endevinalla</button>
+		<p id="resultado"></p>
 	</main>
 
 	<footer>
