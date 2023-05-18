@@ -33,6 +33,7 @@ function check_number (){
 	}
 }
 
+
 let adivinanzas = [];
 let adivinanzaActual;
 
@@ -45,7 +46,7 @@ fetch('endevinalles.json')
 
 function mostrarAdivinanza() {
 adivinanzaActual = adivinanzas[Math.floor(Math.random() * adivinanzas.length)];
-document.getElementById('adivinanza').innerText = adivinanzaActual.adivinanza;
+document.getElementById('adivinanza').innerText = adivinanzaActual.Endevinalla;
 }
 
 function esRespuestaCorrecta(respuestaUsuario, respuestaCorrecta) {
@@ -57,7 +58,7 @@ function esRespuestaCorrecta(respuestaUsuario, respuestaCorrecta) {
 
 document.getElementById('enviarRespuesta').addEventListener('click', () => {
 	const respuestaUsuario = document.getElementById('respuestaUsuario').value.trim().toLowerCase();
-	const respuestaCorrecta = adivinanzaActual.respuesta.trim().toLowerCase();
+	const respuestaCorrecta = adivinanzaActual.resposta.trim().toLowerCase();
 
 	if (esRespuestaCorrecta(respuestaUsuario, respuestaCorrecta)) {
 		document.getElementById('resultado').innerText = '¡Respuesta correcta!';
@@ -72,6 +73,8 @@ document.getElementById('cambiarAdivinanza').addEventListener('click', () => {
     document.getElementById('resultado').innerText = '';
     document.getElementById('respuestaUsuario').value = '';
 });
+
+
 /*
 fetch ("enbuscapaco.json").then(function(response){
 	return response.json();
